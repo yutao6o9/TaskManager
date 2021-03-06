@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css"
+        integrity="sha384-LTIDeidl25h2dPxrB2Ekgc9c7sEC3CWGM6HeFmuDNUjX76Ert4Z4IY714dhZHPLd" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <!-- メインプログラムができたら{{ staticfile('style.css') }} に書き換えする-->
+    <title>TaskManager</title>
+</head>
+
+<body>
+    <header class="page-header">
+        <h1><a href="/" class="logo"> TaskManager </a></h1>
+        <nav>
+            <ul class="main-nav">
+                <li><a href="/sigh_up">新規登録</a></li>
+                <li><a href="/login">ログイン</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="main">
+        <div class="contents">
+            {% block contents %}
+            {% endblock %}
+        </div>
+    </div>
+    <div id="overview">
+    </div>
+    {% block footer_script %}
+    {% endblock %}
+</body>
+
+</html>

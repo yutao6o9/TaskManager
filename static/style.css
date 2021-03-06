@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+html {
+    font-size: 100%;
+}
+
+body {
+    line-height: 1;
+    color: #000000;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: #000000;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    margin-top:  14px;
+    color: aquamarine;
+}
+
+.main-nav {
+    display: flex;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-top: 34px;
+    list-style: none;
+}
+
+.main-nav li {
+    margin-left: 36px;
+}
+
+.main-nav a {
+    color: aquamarine;
+}
+
+.main-nav a:hover {
+    color: #0bd
+}
