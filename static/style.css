@@ -9,6 +9,10 @@ body {
     color: #000000;
 }
 
+li {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
 }
@@ -22,6 +26,12 @@ header {
     justify-content: space-between;
 }
 
+.wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
 .logo {
     margin-top:  14px;
     color: aquamarine;
@@ -32,7 +42,6 @@ header {
     font-size: 1rem;
     text-transform: uppercase;
     margin-top: 34px;
-    list-style: none;
 }
 
 .main-nav li {
@@ -43,6 +52,37 @@ header {
     color: aquamarine;
 }
 
-.main-nav a:hover {
-    color: #0bd
+footer {
+    background-color: aquamarine;
+}
+
+.page-footer {
+    display: flex;
+}
+
+.About {
+    width: 50%;
+    padding-left: 30%;
+    margin: 24px 0;
+}
+
+.about {
+    display: flex;
+    width: 50%;
+    margin: 24px 0;
+}
+
+.about-this p,
+.about-dev p {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.about-dev {
+    margin-left: 50px;
+}
+
+.about-this li,
+.about-dev li {
+    margin-top: 10px;
 }
