@@ -51,38 +51,3 @@ header {
 .main-nav a {
     color: aquamarine;
 }
-
-footer {
-    background-color: aquamarine;
-}
-
-.page-footer {
-    display: flex;
-}
-
-.About {
-    width: 50%;
-    padding-left: 30%;
-    margin: 24px 0;
-}
-
-.about {
-    display: flex;
-    width: 50%;
-    margin: 24px 0;
-}
-
-.about-this p,
-.about-dev p {
-    font-weight: bold;
-    letter-spacing: 0.5px;
-}
-
-.about-dev {
-    margin-left: 50px;
-}
-
-.about-this li,
-.about-dev li {
-    margin-top: 10px;
-}
