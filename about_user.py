@@ -1,5 +1,6 @@
 # ---ユーザー登録、ログインに関する処理をまとめる--- #
 
+import os
 import hashlib  # パスワードをハッシュ化するためのモジュール
 import base64  # エンコード、デコードするためのモジュール
 from functools import wraps
@@ -13,20 +14,29 @@ def is_login():
 
 
 # 登録のフォーム記入に不備がないかのチェック
-def get_input(form):
-    user_id = form.get('user_name', '')
+def judge_signup(form):
+    user_name = form.get('user_name', '')
     pw = form.get('pw', '')
     pw_con = form.get('pw_con', '')
-    if user_id == '':
+    if user_name == '':
         msg = 'ユーザーIDの欄が空白です'
-        return False
+        return False, msg
     if (pw == '') or (pw_con == ''):
         msg = 'パスワードの欄が空白です'
-        return False
+        return False, msg
     if not pw == pw_con:
         msg = 'パスワードの確認が一致していません'
-        return False
-    return True
+        return False, msg
+    msg = ''
+    return True, msg
+
+
+# パスワードからハッシュを作成する
+def password_hash(password):
+    salt = os.urandam(16)
+    digest = hashlib.pbkdf2_hmac('sha256',
+                                 password.encode('utf-8'), salt, 10000)
+    return base64.b64encode(salt + digest).decode('ascii')
 
 
 # ログイン必須を処理するデコレーター

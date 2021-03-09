@@ -1,4 +1,6 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request
+
+import about_user as user
 
 app = Flask(__name__)
 app.secret_key = 'dIfk2EV4Ds7odVWK'
@@ -11,6 +13,9 @@ def signup():
 
 @app.route('/signup/try', methods=['POST'])
 def try_signup():
+    judge, msg = user.judge_signup(request.form)
+    if not judge:
+        return redirect('/signup', msg=msg)
     return redirect('/user/<user_id>')
 
 
