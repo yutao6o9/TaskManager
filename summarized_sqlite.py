@@ -34,6 +34,6 @@ def exec(sql, *args):
 # SQLを実行して結果を得る
 def select(sql, *args):
     db = open_db()
-    c = db.cursor
+    c = db.cursor()
     c.execute(sql, args)
     return c.fetchall()  # SELECT文に該当するデータを全て返す
