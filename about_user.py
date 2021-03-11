@@ -45,7 +45,7 @@ def check_username(user_name):
 
 # パスワードからハッシュを作成する
 def password_hash(password):
-    salt = os.urandam(16)
+    salt = os.urandom(16)
     digest = hashlib.pbkdf2_hmac('sha256',
                                  password.encode('utf-8'), salt, 10000)
     return base64.b64encode(salt + digest).decode('ascii')
