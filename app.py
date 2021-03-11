@@ -6,6 +6,7 @@ app = Flask(__name__)
 app.secret_key = 'dIfk2EV4Ds7odVWK'
 
 
+# --- ログイン関係 --- #
 @app.route('/signup')
 def signup():
     return render_template('signup_form.html')
@@ -28,7 +29,16 @@ def login():
 
 @app.route('/login/try', methods=['POST'])
 def try_login():
-    return redirect('/user/<user_id>')
+    judge, msg = user.judge_login(request.form)
+    if not judge:
+        return redirect('/login', msg=msg)
+    return redirect('/')
+# ----------------------------------------------- #
+
+
+@app.route('/')
+def index():
+    return redirect('/signup')
 
 
 if __name__ == '__main__':
