@@ -16,7 +16,7 @@ def signup():
 def try_signup():
     judge, msg = user.judge_signup(request.form)
     if not judge:
-        return redirect('/signup', msg=msg)
+        return error_msg(msg)
     user_id = user.add_user(request.form)
     # 登録したらそのままログインに移行したい
     return redirect('/login')
@@ -31,14 +31,18 @@ def login():
 def try_login():
     judge, msg = user.judge_login(request.form)
     if not judge:
-        return redirect('/login', msg=msg)
-    return redirect('/')
+        return error_msg(msg)
+    return error_msg(msg)
 # ----------------------------------------------- #
 
 
 @app.route('/')
 def index():
     return redirect('/signup')
+
+
+def error_msg(msg):
+    return render_template('msg.html', msg=msg)
 
 
 if __name__ == '__main__':

@@ -1,5 +1,12 @@
 {% extends "layout.html" %}
 
+{% block nav %}
+<ul class="main-nav">
+    <li><a href="/sighup">新規登録</a></li>
+    <li><a href="/login">ログイン</a></li>
+</ul>
+{% endblock %}
+
 {% block contents %}
 <h3>アカウントを登録する</h3>
 <p>すでにアカウントを持っている場合は<a href="/login">ログイン</a>する</p>

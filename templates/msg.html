@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block nav %}
+<ul class="main-nav">
+    <li><a href="/sighup">新規登録</a></li>
+    <li><a href="/login">ログイン</a></li>
+</ul>
+{% endblock %}
+
+{% block contents %}
+<div id="msg">{{ msg }}</div>
+{% endblock %}
