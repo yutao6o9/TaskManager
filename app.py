@@ -9,14 +9,14 @@ app.secret_key = 'dIfk2EV4Ds7odVWK'
 # --- ログイン関係 --- #
 @app.route('/signup')
 def signup():
-    return render_template('signup_form.html')
+    return render_template('signup_form.html', status=user.is_login())
 
 
 @app.route('/signup/try', methods=['POST'])
 def try_signup():
     judge, msg = user.judge_signup(request.form)
     if not judge:
-        return redirect('/signup', msg=msg)
+        return error_msg(msg)
     user_id = user.add_user(request.form)
     # 登録したらそのままログインに移行したい
     return redirect('/login')
@@ -24,21 +24,31 @@ def try_signup():
 
 @app.route('/login')
 def login():
-    return render_template('login_form.html')
+    return render_template('login_form.html', status=user.is_login())
 
 
 @app.route('/login/try', methods=['POST'])
 def try_login():
     judge, msg = user.judge_login(request.form)
     if not judge:
-        return redirect('/login', msg=msg)
-    return redirect('/')
+        return error_msg(msg)
+    return redirect('/user/' + str(user.get_id()))
 # ----------------------------------------------- #
 
 
 @app.route('/')
 def index():
     return redirect('/signup')
+
+
+@app.route('/user/<user_id>')
+@user.login_required
+def user_page(user_id):
+    return error_msg('aaa')
+
+
+def error_msg(msg):
+    return render_template('msg.html', msg=msg, status=user.is_login())
 
 
 if __name__ == '__main__':

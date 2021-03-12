@@ -1,5 +1,16 @@
 {% extends "layout.html" %}
 
+{% block nav %}
+<ul class="main-nav">
+    {% if not status %}
+    <li><a href="/signup">新規登録</a></li>
+    <li><a href="/login">ログイン</a></li>
+    {% else %}
+    <li><a href="/logout">ログアウト</a></li>
+    {% endif %}
+</ul>
+{% endblock %}
+
 {% block contents %}
 <h3>ログインする</h3>
 <p>アカウントを持っていない場合は<a href="/signup">新規登録</a>する</p>

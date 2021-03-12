@@ -97,7 +97,7 @@ def judge_login(form):
     if not password_verify(pw, get_password(user_name)):
         msg = 'ユーザーIDもしくはパスワードが違います'
         return False, msg
-    msg = None
+    msg = 'ログイン成功'
     session['login'] = user_name
     return True, msg
 

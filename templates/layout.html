@@ -12,13 +12,11 @@
 </head>
 
 <body>
-    <header class="page-header">
+    <header class="page-header wrapper">
         <h1><a href="/" class="logo"> TaskManager </a></h1>
         <nav>
-            <ul class="main-nav">
-                <li><a href="/sighup">新規登録</a></li>
-                <li><a href="/login">ログイン</a></li>
-            </ul>
+            {% block nav %}
+            {% endblock %}
         </nav>
     </header>
     <div id="main">
