@@ -9,7 +9,7 @@ app.secret_key = 'dIfk2EV4Ds7odVWK'
 # --- ログイン関係 --- #
 @app.route('/signup')
 def signup():
-    return render_template('signup_form.html')
+    return render_template('signup_form.html', status=user.is_login())
 
 
 @app.route('/signup/try', methods=['POST'])
@@ -24,7 +24,7 @@ def try_signup():
 
 @app.route('/login')
 def login():
-    return render_template('login_form.html')
+    return render_template('login_form.html', status=user.is_login())
 
 
 @app.route('/login/try', methods=['POST'])
@@ -48,7 +48,7 @@ def user_page(user_id):
 
 
 def error_msg(msg):
-    return render_template('msg.html', msg=msg)
+    return render_template('msg.html', msg=msg, status=user.is_login())
 
 
 if __name__ == '__main__':
