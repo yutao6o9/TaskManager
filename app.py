@@ -32,13 +32,19 @@ def try_login():
     judge, msg = user.judge_login(request.form)
     if not judge:
         return error_msg(msg)
-    return error_msg(msg)
+    return redirect('/user/' + str(user.get_id()))
 # ----------------------------------------------- #
 
 
 @app.route('/')
 def index():
     return redirect('/signup')
+
+
+@app.route('/user/<user_id>')
+@user.login_required
+def user_page(user_id):
+    return error_msg('aaa')
 
 
 def error_msg(msg):
