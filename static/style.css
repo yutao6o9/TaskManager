@@ -51,3 +51,7 @@ header {
 .main-nav a {
     color: aquamarine;
 }
+
+.contents {
+    margin: 20px 0 0 20px;
+}
