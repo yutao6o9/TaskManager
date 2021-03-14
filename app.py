@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, request
 
 import about_user as user
+import about_task as task
 
 app = Flask(__name__)
 app.secret_key = 'dIfk2EV4Ds7odVWK'
@@ -55,6 +56,13 @@ def index():
 def user_page(user_id):
     return render_template('task.html', status=user.is_login(),
                            user_name=user.get_id())
+
+
+@app.route('/task/try', methods=['POST'])
+@user.login_required
+def try_add_task():
+    task_id, msg = task.add_task(request.form)
+    return redirect('/user/' + str(user.get_id()))
 
 
 def error_msg(msg):
