@@ -44,7 +44,8 @@ def index():
 @app.route('/user/<user_id>')
 @user.login_required
 def user_page(user_id):
-    return error_msg('aaa')
+    return render_template('task.html', status=user.is_login(),
+                           user_name=user.get_id())
 
 
 def error_msg(msg):
