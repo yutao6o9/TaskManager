@@ -8,10 +8,7 @@ c = db.cursor()
 c.execute(
     'CREATE TABLE users(user_id INTEGER PRIMARY KEY AUTOINCREMENT, user_name TEXT, password TEXT)')
 
-c.execute(
-    'CREATE TABLE works(work_id INTEGER PRIMARY KEY AUTOINCREMENT, created_who INTEGER)')
-
-c.execute('CREATE TABLE tasks(task_id INTEGER PRIMARY KEY AUTOINCREMENT, works_id INTEGER, title TEXT, memo TEXT, deadline TEXT, status INTEGER DEFAULT 0)')
+c.execute('CREATE TABLE tasks(task_id INTEGER PRIMARY KEY AUTOINCREMENT, user_name TEXT, title TEXT, memo TEXT, strat TEXT, deadline TEXT)')
 
 db.commit()
 db.close()
