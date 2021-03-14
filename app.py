@@ -33,12 +33,21 @@ def try_login():
     if not judge:
         return error_msg(msg)
     return redirect('/user/' + str(user.get_id()))
+
+
+@app.route('/logout')
+def logout():
+    user.try_logout()
+    return redirect('/login')
 # ----------------------------------------------- #
 
 
 @app.route('/')
 def index():
-    return redirect('/signup')
+    status = user.is_login()
+    if not status:
+        return redirect('/signup')
+    return redirect('/user/' + str(user.get_id()))
 
 
 @app.route('/user/<user_id>')
