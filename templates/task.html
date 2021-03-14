@@ -14,18 +14,18 @@
 {% block contents %}
 <h3> {{ user_name }} さんのタスク</h3>
 <div class="form-block">
-    <form action="/add/try" methods="POST" class="pure-form pure-form-stacked">
+    <form action="/task/try" method="POST" class="pure-form pure-form-stacked">
         <label>タスクを追加する</label>
         <input type="text" name="title" id="title" placeholder="タイトル">
         <textarea name="memo" rows="2" cols="60" placeholder="メモ"></textarea>
         <div class="deadline">
             <h3>期限：</h3>
-            <select id="year">
+            <select name="year" id="year">
                 <option>2021</option>
                 <option>2022</option>
             </select>
             <h3>年</h3>
-            <select id="month">
+            <select name="month" id="month">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -40,7 +40,7 @@
                 <option>12</option>
             </select>
             <h3>月</h3>
-            <select id="day">
+            <select name="day" id="day">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -74,7 +74,7 @@
                 <option>31</option>
             </select>
             <h4>日　</h4>
-            <select id="hour">
+            <select name="hour" id="hour">
                 <option>0</option>
                 <option>1</option>
                 <option>2</option>
@@ -101,7 +101,7 @@
                 <option>23</option>
             </select>
             <h4>時</h4>
-            <select id="minute">
+            <select name="minute" id="minute">
                 <option>00</option>
                 <option>10</option>
                 <option>20</option>
