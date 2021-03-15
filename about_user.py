@@ -108,7 +108,7 @@ def try_logout():
 
 
 # ユーザー名を得る
-def get_id():
+def get_username():
     return session['login'] if is_login() else '未ログイン'
 
 

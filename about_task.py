@@ -1,6 +1,6 @@
 import datetime
 
-from about_user import get_id
+from about_user import get_username
 from summarized_sqlite import exec, select
 
 
@@ -18,7 +18,7 @@ def add_task(form):
     hour = form.get('hour', '')
     minute = form.get('minute', '')
     deadline = '{}/{}/{} {}：{}'.format(year, month, day, hour, minute)
-    user_name = get_id()
+    user_name = get_username()
     msg = None
     task_id = exec('INSERT INTO tasks (user_name, title, memo, start, deadline) VALUES(?, ?, ?, ?, ?)',
                    user_name, title, memo, now, deadline)

@@ -33,7 +33,7 @@ def try_login():
     judge, msg = user.judge_login(request.form)
     if not judge:
         return error_msg(msg)
-    return redirect('/user/' + str(user.get_id()))
+    return redirect('/user/' + str(user.get_username()))
 
 
 @app.route('/logout')
@@ -48,21 +48,23 @@ def index():
     status = user.is_login()
     if not status:
         return redirect('/signup')
-    return redirect('/user/' + str(user.get_id()))
+    return redirect('/user/' + str(user.get_username()))
 
 
 @app.route('/user/<user_id>')
 @user.login_required
 def user_page(user_id):
+    user_name = user.get_username()
+    tasks = task.get_tasks(user_name)
     return render_template('task.html', status=user.is_login(),
-                           user_name=user.get_id())
+                           user_name=user_name, tasks=tasks)
 
 
 @app.route('/task/try', methods=['POST'])
 @user.login_required
 def try_add_task():
     task_id, msg = task.add_task(request.form)
-    return redirect('/user/' + str(user.get_id()))
+    return redirect('/user/' + str(user.get_username()))
 
 
 def error_msg(msg):
