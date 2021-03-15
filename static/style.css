@@ -64,6 +64,13 @@ header {
     margin-top: 20px;
 }
 
+.task {
+    display: flex;
+    background-color: aqua;
+    width: fit-content;
+    align-items: center;
+}
+
 .deadline {
     display: flex;
     align-items: center;

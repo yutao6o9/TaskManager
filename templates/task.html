@@ -13,6 +13,26 @@
 
 {% block contents %}
 <h3> {{ user_name }} さんのタスク</h3>
+<div class="tasks">
+    {% for i in tasks %}
+    <div class="task">
+        <label for="stacked-remember" class="pure-checkbox">
+            <input type="checkbox" id="stacked-remember">
+        </label>
+        <div class="task-detail">
+            <h3>{{ i.title }}</h3>
+            <p>{{ i.memo }}}</p>
+            <div class="time">
+                <span class="start-time">開始: {{ i.start }}</span>
+                <span class="deadline">期限: {{ i.deadline }}</span>
+            </div>
+        </div>
+        <form action="/delete">
+            <button type="button" class="pure-button pure-button-primary">完了</button>
+        </form>
+    </div>
+    {% endfor %}
+</div>
 <div class="form-block">
     <form action="/task/try" method="POST" class="pure-form pure-form-stacked">
         <label>タスクを追加する</label>
