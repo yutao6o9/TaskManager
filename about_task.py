@@ -25,6 +25,11 @@ def add_task(form):
     return task_id, msg
 
 
+# 特定のユーザーのタスク一覧を得る
+def get_tasks(user_name):
+    return select('SELECT * FROM tasks WHERE user_name=?', user_name)
+
+
 def get_datetime_now():
     now = datetime.datetime.now()
     return "{0:%Y/%m/%d %H：%M}".format(now)  # 0:は何番目の要素に適応するか指定する
