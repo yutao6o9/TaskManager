@@ -67,6 +67,13 @@ def try_add_task():
     return redirect('/user/' + str(user.get_username()))
 
 
+@app.route('/delete/try', methods=['POST'])
+@user.login_required
+def try_delete_task():
+    delete = task.delete_task(request.form, user.get_username())
+    return redirect('/user/' + str(user.get_username()))
+
+
 def error_msg(msg):
     return render_template('msg.html', msg=msg, status=user.is_login())
 

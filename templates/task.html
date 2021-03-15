@@ -27,8 +27,9 @@
                 <span class="deadline">期限: {{ i.deadline }}</span>
             </div>
         </div>
-        <form action="/delete">
-            <button type="button" class="pure-button pure-button-primary">完了</button>
+        <form action="/delete/try" method="POST">
+            <input type="hidden" name="title" value="{{ i.title }}">
+            <button type="submit" class="pure-button pure-button-primary">完了</button>
         </form>
     </div>
     {% endfor %}
