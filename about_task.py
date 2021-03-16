@@ -17,7 +17,7 @@ def add_task(form):
     day = form.get('day', '')
     hour = form.get('hour', '')
     minute = form.get('minute', '')
-    deadline = '{}/{}/{} {}：{}'.format(year, month, day, hour, minute)
+    deadline = '{}/{}/{} {}:{}'.format(year, month, day, hour, minute)
     user_name = get_username()
     msg = None
     task_id = exec('INSERT INTO tasks (user_name, title, memo, start, deadline) VALUES(?, ?, ?, ?, ?)',
@@ -35,10 +35,9 @@ def delete_task(form, user_name):
     title = form.get('title')
     delete = exec('DELETE FROM tasks where user_name=? and title=?',
                   user_name, title)
-    print(user_name, title)
     return delete
 
 
 def get_datetime_now():
     now = datetime.datetime.now()
-    return "{0:%Y/%m/%d %H：%M}".format(now)  # 0:は何番目の要素に適応するか指定する
+    return "{0:%Y/%m/%d %H:%M}".format(now)  # 0:は何番目の要素に適応するか指定する

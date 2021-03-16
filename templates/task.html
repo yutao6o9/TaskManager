@@ -38,14 +38,14 @@
     <form action="/task/try" method="POST" class="pure-form pure-form-stacked">
         <label>タスクを追加する</label>
         <input type="text" name="title" id="title" placeholder="タイトル">
-        <textarea name="memo" rows="2" cols="60" placeholder="メモ"></textarea>
+        <textarea name="memo" rows="2" cols="60" placeholder="メモ(なるべく短く)"></textarea>
         <div class="deadline">
-            <h3>期限：</h3>
+            <h4>期限：</h4>
             <select name="year" id="year">
                 <option>2021</option>
                 <option>2022</option>
             </select>
-            <h3>年</h3>
+            <h4>年</h4>
             <select name="month" id="month">
                 <option>1</option>
                 <option>2</option>
@@ -60,7 +60,7 @@
                 <option>11</option>
                 <option>12</option>
             </select>
-            <h3>月</h3>
+            <h4>月</h4>
             <select name="day" id="day">
                 <option>1</option>
                 <option>2</option>

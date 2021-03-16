@@ -4,11 +4,6 @@ html {
     font-size: 100%;
 }
 
-body {
-    line-height: 1;
-    color: #000000;
-}
-
 li {
     list-style: none;
 }
@@ -17,39 +12,37 @@ a {
     text-decoration: none;
 }
 
-header {
-    background-color: #000000;
-}
-
 .page-header {
+    background-color: #000000;
     display: flex;
     justify-content: space-between;
+    height:  70px
 }
 
 .wrapper {
     max-width: 100%;
-    margin: 0 auto;
-    padding: 0 2%;
+    padding: 0 20px;
+    align-items: center;
 }
 
-.logo {
-    margin-top:  14px;
-    color: aquamarine;
+.logo,
+.main-nav a {
+    color: #FFFFFF;
+}
+
+.main-nav a:hover {
+    text-decoration: #FFFFFF;
 }
 
 .main-nav {
     display: flex;
     font-size: 1rem;
     text-transform: uppercase;
-    margin-top: 34px;
 }
 
 .main-nav li {
     margin-left: 36px;
-}
-
-.main-nav a {
-    color: aquamarine;
+    margin-top: 10px;
 }
 
 .contents {
@@ -66,18 +59,38 @@ header {
 
 .task {
     display: flex;
-    background-color: aqua;
-    width: fit-content;
+    width: 97%;
     align-items: center;
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    border: solid 3px #000000;
 }
 
-.deadline {
+.task-detail {
+    margin: 5px 10px;
+}
+
+.time {
+    display: flex;
+    margin-top: 2px;
+}
+
+.time .deadline {
+    margin-left: 20px;
+}
+
+.task form {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.form-block .deadline {
     display: flex;
     align-items: center;
 }
 
 .add-button {
-    margin-left: 76px;
+    margin-left: 20px;
 }
 
 select {

@@ -12,13 +12,13 @@
 {% endblock %}
 
 {% block contents %}
-<h2>アカウントを登録する</h2>
+<h3>アカウントを登録する</h3>
 <p>すでにアカウントを持っている場合は<a href="/login">ログイン</a>する</p>
 <div class="form-block">
     <form action="/signup/try" method="POST" class="pure-form pure-form-stacked">
-        <label for="user_name">ユーザーID</label>
+        <label for="user_name">ユーザーID(半角英数字のみ使用可)</label>
         <input type="text" name="user_name" id="user_name" placeholder="ユーザーID">
-        <label for="pw">パスワード</label>
+        <label for="pw">パスワード(半角英数字のみ使用可)</label>
         <input type="password" name="pw" id="pw" placeholder="パスワード">
         <label for="pw_con">パスワード確認用</label>
         <input type="password" name="pw_con" id="pw_con" placeholder="パスワード確認用">
