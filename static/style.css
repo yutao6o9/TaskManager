@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+html {
+    font-size: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page-header {
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+    height:  70px
+}
+
+.wrapper {
+    max-width: 100%;
+    padding: 0 20px;
+    align-items: center;
+}
+
+.logo,
+.main-nav a {
+    color: #FFFFFF;
+}
+
+.main-nav a:hover {
+    text-decoration: #FFFFFF;
+}
+
+.main-nav {
+    display: flex;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.main-nav li {
+    margin-left: 36px;
+    margin-top: 10px;
+}
+
+.contents {
+    margin: 20px 0 0 20px;
+}
+
+.contents p {
+    margin-top: 5px;
+}
+
+.form-block {
+    margin-top: 20px;
+}
+
+.task {
+    display: flex;
+    width: 97%;
+    align-items: center;
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    border: solid 3px #000000;
+}
+
+.task-detail {
+    margin: 5px 10px;
+}
+
+.time {
+    display: flex;
+    margin-top: 2px;
+}
+
+.time .deadline {
+    margin-left: 20px;
+}
+
+.task form {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.form-block .deadline {
+    display: flex;
+    align-items: center;
+}
+
+.add-button {
+    margin-left: 20px;
+}
+
+select {
+    -moz-appearance: menulist;
+    -webkit-appearance: menulist;
+}
